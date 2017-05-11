@@ -9,9 +9,8 @@
 #' hello(fname="Your",lname="Name")
 
 trimnum <- function(x,keep.digits=F) {
-    x<-1234.12354
     x.round<-round(x)
-    x.n<-as.character(x.round)%>%nchar
+    x.n<-nchar(as.character(x.round))
     x.n.keep<-floor(x.n/2)
     x.trim<-floor(x.round/10^x.n.keep)
     x.trim<-x.trim*10^x.n.keep
