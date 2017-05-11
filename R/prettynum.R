@@ -11,8 +11,9 @@
 trimnum <- function(x,keep.digits=F) {
     x.round<-round(x)
     x.n<-nchar(as.character(x.round))
-    x.n.keep<-floor(x.n/2)
-    x.trim<-floor(x.round/10^x.n.keep)
-    x.trim<-x.trim*10^x.n.keep
+    x.n.trim<-x.n-floor(x.n/2)
+    x.trim<-floor(x.round/10^x.n.trim)
+    x.trim<-x.trim*10^x.n.trim
+
     x.trim
 }
